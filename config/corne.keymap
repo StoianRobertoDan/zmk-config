@@ -8,54 +8,61 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+        behaviors {
+                td0: tap_dance_0 {
+                    compatible = "zmk,behavior-tap-dance";
+                    #binding-cells = <12>;
+                    tapping-term-ms = <200>;
+                    bindings = <&kp LSHFT>, <&tog CAPS>;
+                 };
+         };
         combos {
                 compatible = "zmk,combos";
                 combo_à {
-                    timeout-ms = <50>;
+                    timeout-ms = <200>;
                     layers = <0>
-                    key-positions = <41 13>;	//RALT+A
+                    key-positions = <41 13>;	//ALT+A
                     bindings = <&kp IT_AGRV>;
                 };
-                combo_è {
-                    timeout-ms = <50>;
-                    layers = <0>
-                    key-positions = <41 3>;	//RALT+E
-                    bindings = <&kp IT_EACU>;
-                };
-                combo_è {
-                    timeout-ms = <50>;
-                    layers = <0>
-                    key-positions = <41 24 3>;	//RALT+CTRL+E
-                    bindings = <&kp IT_EGRV>;
-                };
-                combo_è_caps {
-                    timeout-ms = <50>;
-                    layers = <0>
-                    key-positions = <41 12 13>;	//RALT+SHIFT+E
-                    bindings = <&kp IT_CERG>;
-                };
-                combo_ù {
-                    timeout-ms = <50>;
-                    layers = <0>
-                    key-positions = <41 7>;	//RALT+U
-                    bindings = <&kp IT_UGRV>;
-                };
-                combo_ì {
-                    timeout-ms = <50>;
-                    layers = <0>
-                    key-positions = <41 8>;	//RALT+I
-                    bindings = <&kp IT_IGRV>;
-                };
-                combo_ò {
-                    timeout-ms = <50>;
-                    layers = <0>
-                    key-positions = <41 9>;	//RALT+O
-                    bindings = <&kp IT_OGRV>;
-                };
+//                combo_è {
+  //                  timeout-ms = <50>;
+    //                layers = <0>
+      //              key-positions = <41 3>;	//ALT+E
+        //            bindings = <&kp IT_EACU>;
+          //      };
+            //    combo_è {
+//                    timeout-ms = <50>;
+  //                  layers = <0>
+    //                key-positions = <41 24 3>;	//ALT+CTRL+E
+      //              bindings = <&kp IT_EGRV>;
+        //        };
+          //      combo_è_caps {
+            //        timeout-ms = <50>;
+              //      layers = <0>
+                //    key-positions = <41 12 13>;	//ALT+SHIFT+E
+//                    bindings = <&kp IT_CERG>;
+  //              };
+    //            combo_ù {
+      //              timeout-ms = <50>;
+        //            layers = <0>
+          //          key-positions = <41 7>;	//ALT+U
+            //        bindings = <&kp IT_UGRV>;
+              //  };
+//                combo_ì {
+  //                  timeout-ms = <50>;
+    //                layers = <0>
+      //              key-positions = <41 8>;	//ALT+I
+        //            bindings = <&kp IT_IGRV>;
+          //      };
+            //    combo_ò {
+              //      timeout-ms = <50>;
+                //    layers = <0>
+//                    key-positions = <41 9>;	//ALT+O
+  //                  bindings = <&kp IT_OGRV>;
+    //            };
         };
         keymap {
                 compatible = "zmk,keymap";
-
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
