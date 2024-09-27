@@ -26,13 +26,13 @@
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  7  |  8  |  9  |  *  |     | BSPC |
-// |      |     | UP  |     |     |     |   |  4  |  5  |  6  |  /  |  +  | PGUP |
+// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  7  |  8  |  9  |  *  | HOME| BSPC |
+// | CAPSL|     | UP  |     |     |     |   |  4  |  5  |  6  |  /  |  +  | PGUP |
 // | SHFT | LFT | DWN | RGT |     |     |   |  1  |  2  |  3  |  .  |  -  | PGDN |
 //                    | GUI |     | SPC |   | ENT |  0  | ALT |
                         bindings = <
-   &kp TAB    &kp N1    &kp N2    &kp N3    &kp N4       &kp N5         &kp N7   &kp N8   &kp N9   &kp ASTRK  &none      &kp BSPC
-   &none      &none     &kp UP    &none     &none        &none          &kp N4   &kp N5   &kp N6   &kp FSLH   &kp PLUS   &kp PG_UP 
+   &kp TAB    &kp N1    &kp N2    &kp N3    &kp N4       &kp N5         &kp N7   &kp N8   &kp N9   &kp ASTRK  &kp HOME      &kp BSPC
+   &tog CAPS  &none     &kp UP    &none     &none        &none          &kp N4   &kp N5   &kp N6   &kp FSLH   &kp PLUS   &kp PG_UP 
    &kp LSHFT  &kp LEFT  &kp DOWN  &kp LEFT  &none        &none          &kp N1   &kp N2   &kp N3   &kp DOT    &kp MINUS  &kp PG_DN
                                 &kp LGUI   &trans    &kp SPACE          &kp RET  &kp N0   &kp LALT
                         >;
