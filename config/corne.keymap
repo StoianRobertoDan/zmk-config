@@ -14,52 +14,7 @@
                     #binding-cells = <0>;
                     bindings = <&kp LSHFT>, <&kp CAPS>;
                  };
-         };
-//        combos {
-  //              compatible = "zmk,combos";
-    //            combo_à {
-      //              timeout-ms = <200>;
-        //            layers = <0>;
-          //          key-positions = <41 13>;	//ALT+A
-            //        bindings = <&kp IT_AGRV>;
-              //  };
-//                combo_è {
-  //                  timeout-ms = <50>;
-    //                layers = <0>
-      //              key-positions = <41 3>;	//ALT+E
-        //            bindings = <&kp IT_EACU>;
-          //      };
-            //    combo_è {
-//                    timeout-ms = <50>;
-  //                  layers = <0>
-    //                key-positions = <41 24 3>;	//ALT+CTRL+E
-      //              bindings = <&kp IT_EGRV>;
-        //        };
-          //      combo_è_caps {
-            //        timeout-ms = <50>;
-              //      layers = <0>
-                //    key-positions = <41 12 13>;	//ALT+SHIFT+E
-//                    bindings = <&kp IT_CERG>;
-  //              };
-    //            combo_ù {
-      //              timeout-ms = <50>;
-        //            layers = <0>
-          //          key-positions = <41 7>;	//ALT+U
-            //        bindings = <&kp IT_UGRV>;
-              //  };
-//                combo_ì {
-  //                  timeout-ms = <50>;
-    //                layers = <0>
-      //              key-positions = <41 8>;	//ALT+I
-        //            bindings = <&kp IT_IGRV>;
-          //      };
-            //    combo_ò {
-              //      timeout-ms = <50>;
-                //    layers = <0>
-//                    key-positions = <41 9>;	//ALT+O
-  //                  bindings = <&kp IT_OGRV>;
-    //            };
-      //  };
+        };
         keymap {
                 compatible = "zmk,keymap";
                 default_layer {
