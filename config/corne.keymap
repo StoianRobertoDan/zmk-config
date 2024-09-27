@@ -16,14 +16,14 @@
                     bindings = <&kp LSHFT>, <&tog CAPS>;
                  };
          };
-        combos {
-                compatible = "zmk,combos";
-                combo_à {
-                    timeout-ms = <200>;
-                    layers = <0>;
-                    key-positions = <41 13>;	//ALT+A
-                    bindings = <&kp IT_AGRV>;
-                };
+//        combos {
+  //              compatible = "zmk,combos";
+    //            combo_à {
+      //              timeout-ms = <200>;
+        //            layers = <0>;
+          //          key-positions = <41 13>;	//ALT+A
+            //        bindings = <&kp IT_AGRV>;
+              //  };
 //                combo_è {
   //                  timeout-ms = <50>;
     //                layers = <0>
@@ -60,7 +60,7 @@
 //                    key-positions = <41 9>;	//ALT+O
   //                  bindings = <&kp IT_OGRV>;
     //            };
-        };
+      //  };
         keymap {
                 compatible = "zmk,keymap";
                 default_layer {
