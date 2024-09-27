@@ -11,8 +11,7 @@
         behaviors {
                 sc: Shift_Caps {
                     compatible = "zmk,behavior-tap-dance";
-                    #binding-cells = <12>;
-                    tapping-term-ms = <200>;
+                    #binding-cells = <0>;
                     bindings = <&kp LSHFT>, <&kp CAPS>;
                  };
          };
