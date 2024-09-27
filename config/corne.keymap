@@ -20,7 +20,7 @@
                 compatible = "zmk,combos";
                 combo_à {
                     timeout-ms = <200>;
-                    layers = <0>
+                    layers = <0>;
                     key-positions = <41 13>;	//ALT+A
                     bindings = <&kp IT_AGRV>;
                 };
