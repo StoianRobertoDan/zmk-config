@@ -12,6 +12,7 @@
                 sc: Shift_Caps {
                     compatible = "zmk,behavior-tap-dance";
                     #binding-cells = <0>;
+                    tapping-term-ms = <100>;
                     bindings = <&kp LSHFT>, <&kp CAPS>;
                  };
         };
@@ -20,40 +21,40 @@
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | SHFTC |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | END  |
-// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | END  |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  | ESC | HOME |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
    &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T    &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
-   &sc        &kp A  &kp S  &kp D  &kp F  &kp G    &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp END
-   &kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &kp B    &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+   &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G    &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp END
+   &sc        &kp Z  &kp X  &kp C  &kp V  &kp B    &kp N  &kp M  &kp COMMA  &kp DOT  &kp ESC   &kp HOME
                   &kp LGUI  &tog 1  &kp SPACE      &kp RET  &tog 2  &kp LALT
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  7  |  8  |  9  |  *  | HOME| BSPC |
-// | CAPS |     | UP  |     |     |     |   |  4  |  5  |  6  |  /  |  +  | PGUP |
-// | SHFT | LFT | DWN | RGT |     |     |   |  1  |  2  |  3  |  .  |  -  | PGDN |
+// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  7  |  8  |  9  |  *  |  =  | BSPC |
+// | CTRL |     | UP  |     |     |     |   |  4  |  5  |  6  |  /  |  +  | PGUP |
+// | SHFT | LFT | DWN | RGT |     | DEL |   |  1  |  2  |  3  |  .  |  -  | PGDN |
 //                    | GUI |     | SPC |   | ENT |  0  | ALT |
                         bindings = <
-   &kp TAB    &kp N1    &kp N2    &kp N3    &kp N4       &kp N5         &kp N7   &kp N8   &kp N9   &kp ASTRK  &kp HOME      &kp BSPC
-   &sc        &none     &kp UP    &none     &none        &none          &kp N4   &kp N5   &kp N6   &kp FSLH   &kp PLUS   &kp PG_UP 
-   &kp LCTRL  &kp LEFT  &kp DOWN  &kp LEFT  &none        &none          &kp N1   &kp N2   &kp N3   &kp DOT    &kp MINUS  &kp PG_DN
-                                &kp LGUI   &trans    &kp SPACE          &kp RET  &kp N0   &kp LALT
+   &kp TAB    &kp N1    &kp N2    &kp N3    &kp N4   &kp N5           &kp N7   &kp N8   &kp N9   &kp ASTRK  &kp EQUAL  &kp BSPC
+   &kp LCTRL  &none     &kp UP    &none     &none    &none            &kp N4   &kp N5   &kp N6   &kp FSLH   &kp PLUS   &kp PG_UP 
+   &sc        &kp LEFT  &kp DOWN  &kp LEFT  &none    &kp DEL          &kp N1   &kp N2   &kp N3   &kp DOT    &kp MINUS  &kp PG_DN
+                                  &kp LGUI  &tog 1   &kp SPACE        &kp RET  &kp N0   &kp LALT
                         >;
                 };
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | SHFT |     |     |     |     |     |   |  -  |  =  |  \  |  [  |  ]  |  `   |
-// | CTRL |PSCRN|     |     |     |     |   |  '  |  <  |  >  |  {  |  }  |  ~   |
+// | CTRL |     |     |     |     |     |   |  -  |  =  |  \  |  [  |  ]  |  `   |
+// | SHFT |PRINT|     |     |     |     |   |  '  |  <  |  >  |  {  |  }  |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-   &sc        &none     &none   &none     &none     &none         &kp MINUS  &kp EQUAL  &kp BSLH   &kp LBKT  &kp RBKT  &kp GRAVE
-   &kp LCTRL  &kp PSCRN &none   &none     &none     &none         &kp SQT    &kp LT     &kp GT     &kp LBRC  &kp RBRC  &kp TILDE
-                             &kp LGUI    &trans    &kp SPACE     &kp RET   &trans    &kp RALT
+   &kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT      &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
+   &kp LCTRL  &none     &none   &none     &none     &none          &kp MINUS  &kp EQUAL  &kp BSLH   &kp LBKT  &kp RBKT  &kp GRAVE
+   &sc        &kp PSCRN &none   &none     &none     &none          &kp SQT    &kp LT     &kp GT     &kp LBRC  &kp RBRC  &kp TILDE
+                                &kp LGUI  &none     &kp SPACE      &kp RET    &tog 2     &kp RALT
                         >;
                 };
         };
