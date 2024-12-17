@@ -41,15 +41,24 @@
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | DEL   |
-// | CTRL |LCLK | MUP |RCLK |SCRUP|MFWRD|   |  -  |  =  |  \  |  [  |  ]  |  `   |
-// | SHFT |MLEFT|MDOWN|MRIGT|SCRDW|MBACK|   |  '  |  <  |  >  |  {  |  }  |  ~   |
-//                    | GUI |MCLK | SPC |   | ENT | RSE | ALT |
+// | CTRL |     |     |     |     |     |   |  -  |  =  |  \  |  [  |  ]  |  `   |
+// | SHFT |     |     |     |     |     |   |  '  |  <  |  >  |  {  |  }  |  ~   |
+//                    | GUI |     | SPC |   | ENT | RSE | ALT |
                         bindings = <
    &kp TAB    &kp EXCL       &kp AT         &kp HASH        &kp DLLR       &kp PRCNT     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp DEL
-   &kp LCTRL  &mkp MB1       &mmv MOVE_UP   &mkp MB2        msc SCRL_UP    &mkp MB4      &kp MINUS  &kp EQUAL  &kp BSLH   &kp LBKT  &kp RBKT  &kp GRAVE
-   &kp LSHFT  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN &mkp MB5      &kp SQT    &kp LT     &kp GT     &kp LBRC  &kp RBRC  &kp TILDE
-                                            &kp LGUI        &mkp MB3       &kp SPACE     &kp RET    &tog 2     &kp RALT
+   &kp LCTRL  &none &none &none &none &none      &kp MINUS  &kp EQUAL  &kp BSLH   &kp LBKT  &kp RBKT  &kp GRAVE
+   &kp LSHFT  &none &none &none &none &none      &kp SQT    &kp LT     &kp GT     &kp LBRC  &kp RBRC  &kp TILDE
+                                            &kp LGUI        &none      &kp SPACE     &kp RET    &tog 2     &kp RALT
                         >;
                 };
         };
 };
+// &none
+
+/*
+*|LCLK | MUP |RCLK |SCRUP|MFWRD|
+*|MLEFT|MDOWN|MRIGT|SCRDW|MBACK|
+*&mkp MB1       &mmv MOVE_UP   &mkp MB2        msc SCRL_UP    &mkp MB4      
+*&mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN &mkp MB5      
+*&mkp MB3       
+*/
