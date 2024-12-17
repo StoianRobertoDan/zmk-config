@@ -6,16 +6,10 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
-        behaviors {
-                sc: Shift_Caps {
-                    compatible = "zmk,behavior-tap-dance";
-                    #binding-cells = <0>;
-                    tapping-term-ms = <100>;
-                    bindings = <&kp LSHFT>, <&kp CAPS>;
-                 };
-        };
         keymap {
                 compatible = "zmk,keymap";
                 default_layer {
@@ -27,34 +21,34 @@
                         bindings = <
    &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T    &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
    &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G    &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp END
-   &sc        &kp Z  &kp X  &kp C  &kp V  &kp B    &kp N  &kp M  &kp COMMA  &kp DOT  &kp ESC   &kp HOME
+   &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B    &kp N  &kp M  &kp COMMA  &kp DOT  &kp ESC   &kp HOME
                   &kp LGUI  &tog 1  &kp SPACE      &kp RET  &tog 2  &kp LALT
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  7  |  8  |  9  |  *  |  =  | BSPC |
-// | CTRL |     | UP  |     |     |     |   |  4  |  5  |  6  |  /  |  +  | PGUP |
-// | SHFT | LFT | DWN | RGT |     | DEL |   |  1  |  2  |  3  |  .  |  -  | PGDN |
-//                    | GUI |     | SPC |   | ENT |  0  | ALT |
+// | CTRL |MUTE | UP  |BPRV |BCLR |BNXT |   |  4  |  5  |  6  |  /  |  +  | PGUP |
+// | CAPS | LFT | DWN | RGT |PRINT| DEL |   |  1  |  2  |  3  |  .  |  -  | PGDN |
+//                    | GUI | LWR | SPC |   | ENT |  0  | ALT |
                         bindings = <
-   &kp TAB    &kp N1    &kp N2    &kp N3    &kp N4   &kp N5           &kp N7   &kp N8   &kp N9   &kp ASTRK  &kp EQUAL  &kp BSPC
-   &kp LCTRL  &none     &kp UP    &none     &none    &none            &kp N4   &kp N5   &kp N6   &kp FSLH   &kp PLUS   &kp PG_UP 
-   &sc        &kp LEFT  &kp DOWN  &kp LEFT  &none    &kp DEL          &kp N1   &kp N2   &kp N3   &kp DOT    &kp MINUS  &kp PG_DN
-                                  &kp LGUI  &tog 1   &kp SPACE        &kp RET  &kp N0   &kp LALT
+   &kp TAB    &kp KP_N1  &kp KP_N2 &kp KP_N3  &kp KP_N4  &kp KP_N5        &kp N7   &kp N8   &kp N9   &kp ASTRK  &kp EQUAL  &kp BSPC
+   &kp LCTRL  &kp C_MUTE &kp UP    &bt BT_PRV &bt BT_CLR &bt BT_NXT       &kp N4   &kp N5   &kp N6   &kp FSLH   &kp PLUS   &kp PG_UP 
+   &kp CAPS   &kp LEFT   &kp DOWN  &kp RIGHT  &kp PSCRN  &kp DEL          &kp N1   &kp N2   &kp N3   &kp DOT    &kp MINUS  &kp PG_DN
+                                  &kp LGUI   &tog 1     &kp SPACE        &kp RET  &kp N0   &kp LALT
                         >;
                 };
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  \  |  [  |  ]  |  `   |
-// | SHFT |PRINT|     |     |     |     |   |  '  |  <  |  >  |  {  |  }  |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | DEL   |
+// | CTRL |LCLK | MUP |RCLK |SCRUP|MFWRD|   |  -  |  =  |  \  |  [  |  ]  |  `   |
+// | SHFT |MLEFT|MDOWN|MRIGT|SCRDW|MBACK|   |  '  |  <  |  >  |  {  |  }  |  ~   |
+//                    | GUI |MCLK | SPC |   | ENT | RSE | ALT |
                         bindings = <
-   &kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT      &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-   &kp LCTRL  &none     &none   &none     &none     &none          &kp MINUS  &kp EQUAL  &kp BSLH   &kp LBKT  &kp RBKT  &kp GRAVE
-   &sc        &kp PSCRN &none   &none     &none     &none          &kp SQT    &kp LT     &kp GT     &kp LBRC  &kp RBRC  &kp TILDE
-                                &kp LGUI  &none     &kp SPACE      &kp RET    &tog 2     &kp RALT
+   &kp TAB    &kp EXCL       &kp AT         &kp HASH        &kp DLLR       &kp PRCNT     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp DEL
+   &kp LCTRL  &mkp MB1       &mmv MOVE_UP   &mkp MB2        msc SCRL_UP    &mkp MB4      &kp MINUS  &kp EQUAL  &kp BSLH   &kp LBKT  &kp RBKT  &kp GRAVE
+   &kp LSHFT  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN &mkp MB5      &kp SQT    &kp LT     &kp GT     &kp LBRC  &kp RBRC  &kp TILDE
+                                            &kp LGUI        &mkp MB3       &kp SPACE     &kp RET    &tog 2     &kp RALT
                         >;
                 };
         };
