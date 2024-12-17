@@ -32,10 +32,10 @@
 // | CAPS | LFT | DWN | RGT |PRINT| DEL |   |  1  |  2  |  3  |  .  |  -  | PGDN |
 //                    | GUI | LWR | SPC |   | ENT |  0  | ALT |
                         bindings = <
-   &kp TAB    &kp KP_N1  &kp KP_N2 &kp KP_N3  &kp KP_N4  &kp KP_N5        &kp N7   &kp N8   &kp N9   &kp ASTRK  &kp EQUAL  &kp BSPC
+   &kp TAB    &kp N1     &kp N2    &kp N3     &kp N4     &kp N5           &kp N7   &kp N8   &kp N9   &kp ASTRK  &kp EQUAL  &kp BSPC
    &kp LCTRL  &kp C_MUTE &kp UP    &bt BT_PRV &bt BT_CLR &bt BT_NXT       &kp N4   &kp N5   &kp N6   &kp FSLH   &kp PLUS   &kp PG_UP 
    &kp CAPS   &kp LEFT   &kp DOWN  &kp RIGHT  &kp PSCRN  &kp DEL          &kp N1   &kp N2   &kp N3   &kp DOT    &kp MINUS  &kp PG_DN
-                                  &kp LGUI   &tog 1     &kp SPACE        &kp RET  &kp N0   &kp LALT
+                                   &kp LGUI   &tog 1     &kp SPACE        &kp RET  &kp N0   &kp LALT
                         >;
                 };
                 raise_layer {
